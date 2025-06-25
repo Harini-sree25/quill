@@ -9,12 +9,12 @@
     <h1>Create Journal</h1>
     <form action="/api/v1/journals" method="post">
         <label for="main-title"> Journal Title</label>
-        <input id="main-title" type="text" name="title" placeholder="Enter title">
+        <input id="main-title" type="text" name="title" placeholder="Enter title" minlength="3" required>
 
         <br>
 
         <label for="journal-category">Journal Category</label>
-        <select id="journal-category" name="category">
+        <select id="journal-category" name="category" required>
             <option value="task">Task</option>
             <option value="note">Note</option>
             <option value="idea">Idea</option>
@@ -27,8 +27,12 @@
         
         <br>
 
-        <label for="journal-entry">Journal Entry</label>
-        <textarea id="journal-entry" name="entry" rows="5" cols="30">My day is</textarea>
+        <label for="journal-entry">Journal Entry</label> 
+        <textarea id="journal-entry" name="entry" rows="5" cols="30" minlength="30" required></textarea>
+
+        <br>
+
+        <button type="submit">Submit</button>
     </form>
       
      
